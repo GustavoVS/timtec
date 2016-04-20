@@ -1,6 +1,6 @@
 # coding=utf-8
 from django.db import models
-from accounts.models import AbstractTimtecUser
+from accounts.models import AbstractMoocUser
 from django.utils.translation import ugettext_lazy as _
 
 
@@ -13,7 +13,7 @@ class Campus(models.Model):
         return self.name or self.city
 
 
-class IfUser(AbstractTimtecUser):
+class IfUser(AbstractMoocUser):
     # students fields
     # if_id eh o identificador de matricula
     email = models.EmailField(_('Email address'), blank=True, unique=False)
@@ -30,5 +30,5 @@ class IfUser(AbstractTimtecUser):
     campus = models.ForeignKey(Campus, verbose_name=_('Campus'), related_name='users', null=True, blank=True)
     is_if_staff = models.BooleanField(default=False)
 
-    class Meta(AbstractTimtecUser.Meta):
+    class Meta(AbstractMoocUser.Meta):
         swappable = 'AUTH_USER_MODEL'

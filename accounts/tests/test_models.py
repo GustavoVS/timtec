@@ -14,8 +14,8 @@ def test_username_validator():
     from django.contrib.auth import get_user_model
     from django.core.exceptions import ValidationError
     try:
-        TimtecUser = get_user_model()
-        t = TimtecUser.objects.create(username="test@test", email="test@example.com")
+        MoocUser = get_user_model()
+        t = MoocUser.objects.create(username="test@test", email="test@example.com")
         t.full_clean()
     except ValidationError:
         pass
@@ -27,8 +27,8 @@ def test_username_validator():
 def test_user_picture_url():
     from django.core.files.base import ContentFile
     from django.contrib.auth import get_user_model
-    TimtecUser = get_user_model()
-    user = mommy.make(TimtecUser)
+    MoocUser = get_user_model()
+    user = mommy.make(MoocUser)
     user.username = u'Usér'
     user.save()
 
@@ -49,8 +49,8 @@ def test_user_picture_url():
 @pytest.mark.django_db
 def test_user_profile_property():
     from django.contrib.auth import get_user_model
-    TimtecUser = get_user_model()
-    user = mommy.make(TimtecUser)
+    MoocUser = get_user_model()
+    user = mommy.make(MoocUser)
 
     assert not user.is_profile_filled
 

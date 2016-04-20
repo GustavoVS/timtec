@@ -7,7 +7,7 @@ from django.views.generic.detail import DetailView
 from django.db.models import Q
 
 from accounts.forms import ProfileEditForm, AcceptTermsForm
-from accounts.serializers import TimtecUserSerializer, TimtecUserAdminSerializer
+from accounts.serializers import MoocUserSerializer, MoocUserAdminSerializer
 from braces.views import LoginRequiredMixin
 
 from rest_framework import viewsets
@@ -48,21 +48,21 @@ class ProfileView(LoginRequiredMixin, DetailView):
             return self.request.user
 
 
-class TimtecUserViewSet(viewsets.ReadOnlyModelViewSet):
+class MoocUserViewSet(viewsets.ReadOnlyModelViewSet):
     model = get_user_model()
     lookup_field = 'id'
     filter_fields = ('groups__name',)
     filter_backends = (filters.DjangoFilterBackend, filters.OrderingFilter,)
-    serializer_class = TimtecUserSerializer
+    serializer_class = MoocUserSerializer
     ordering = ('first_name', 'username',)
 
 
-class TimtecUserAdminViewSet(viewsets.ModelViewSet):
+class MoocUserAdminViewSet(viewsets.ModelViewSet):
     model = get_user_model()
     # lookup_field = 'id'
     # filter_backends = (filters.OrderingFilter,)
     permission_classes = (IsAdmin, )
-    serializer_class = TimtecUserAdminSerializer
+    serializer_class = MoocUserAdminSerializer
     ordering = ('first_name', 'username',)
     # search_fields = ('first_name', 'last_name', 'username', 'email')
 
@@ -71,7 +71,7 @@ class TimtecUserAdminViewSet(viewsets.ModelViewSet):
         keyword = self.request.QUERY_PARAMS.get('keyword')
         admin = self.request.QUERY_PARAMS.get('admin')
         blocked = self.request.QUERY_PARAMS.get('blocked')
-        queryset = super(TimtecUserAdminViewSet, self).get_queryset().order_by('username')
+        queryset = super(MoocUserAdminViewSet, self).get_queryset().order_by('username')
 
         if keyword:
             queryset = queryset.filter(Q(first_name__icontains=keyword) |
@@ -102,7 +102,7 @@ class TimtecUserAdminViewSet(viewsets.ModelViewSet):
 
 class UserSearchView(LoginRequiredMixin, generics.ListAPIView):
     model = get_user_model()
-    serializer_class = TimtecUserSerializer
+    serializer_class = MoocUserSerializer
 
     def get_queryset(self):
         queryset = self.model.objects.all()
@@ -117,7 +117,7 @@ class UserSearchView(LoginRequiredMixin, generics.ListAPIView):
 
 class StudentSearchView(LoginRequiredMixin, generics.ListAPIView):
     model = get_user_model()
-    serializer_class = TimtecUserSerializer
+    serializer_class = MoocUserSerializer
     search_fields = ('first_name', 'last_name', 'username', 'email')
 
     def get_queryset(self):

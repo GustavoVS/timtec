@@ -5,8 +5,8 @@ from core.models import (Course, CourseProfessor, CourseStudent, Lesson,
                          Class, CourseAuthor, CourseCertification,
                          CertificationProcess, Evaluation, CertificateTemplate,
                          IfCertificateTemplate)
-from accounts.serializers import TimtecUserSerializer, \
-    TimtecUserAdminCertificateSerializer
+from accounts.serializers import MoocUserSerializer, \
+    MoocUserAdminCertificateSerializer
 from activities.serializers import ActivitySerializer
 from rest_framework.reverse import reverse_lazy
 from notes.models import Note
@@ -15,8 +15,8 @@ from rest_framework import serializers
 
 class ProfessorMessageSerializer(serializers.ModelSerializer):
 
-    professor = TimtecUserSerializer(source='professor', read_only=True)
-    users_details = TimtecUserSerializer(source='users', read_only=True)
+    professor = MoocUserSerializer(source='professor', read_only=True)
+    users_details = MoocUserSerializer(source='users', read_only=True)
 
     class Meta:
         model = ProfessorMessage
@@ -138,7 +138,7 @@ class CertificateTemplateImageSerializer(serializers.ModelSerializer):
 
 
 class ClassSerializer(serializers.ModelSerializer):
-    students = TimtecUserAdminCertificateSerializer(read_only=True)
+    students = MoocUserAdminCertificateSerializer(read_only=True)
     processes = CertificationProcessSerializer(read_only=True)
     evaluations = EvaluationSerializer(read_only=True)
 
@@ -194,7 +194,7 @@ class CourseSerializer(serializers.ModelSerializer):
 
 
 class CourseStudentSerializer(serializers.ModelSerializer):
-    user = TimtecUserSerializer(read_only=True)
+    user = MoocUserSerializer(read_only=True)
 
     course_finished = serializers.BooleanField(source='course_finished')
     can_emmit_receipt = serializers.BooleanField(source='can_emmit_receipt')
@@ -213,7 +213,7 @@ class CourseStudentSerializer(serializers.ModelSerializer):
                   'current_class', 'min_percent_to_complete',)
 
 
-class ProfileSerializer(TimtecUserSerializer):
+class ProfileSerializer(MoocUserSerializer):
     certificates = ProfileCourseCertificationSerializer(many=True,
                                                         source="get_certificates")
 
@@ -233,7 +233,7 @@ class CourseThumbSerializer(serializers.ModelSerializer):
 
 class StudentProgressSerializer(serializers.ModelSerializer):
     complete = serializers.DateTimeField(required=False)
-    user = TimtecUserSerializer(read_only=True, source='user')
+    user = MoocUserSerializer(read_only=True, source='user')
 
     class Meta:
         model = StudentProgress
@@ -315,7 +315,7 @@ class CourseNoteSerializer(serializers.ModelSerializer):
 
 
 class CourseProfessorSerializer(serializers.ModelSerializer):
-    user_info = TimtecUserSerializer(source='user', read_only=True)
+    user_info = MoocUserSerializer(source='user', read_only=True)
     course_info = CourseSerializer(source='course', read_only=True)
     get_name = serializers.Field()
     get_biography = serializers.Field()
@@ -330,7 +330,7 @@ class CourseProfessorSerializer(serializers.ModelSerializer):
 
 
 class CourseAuthorSerializer(serializers.ModelSerializer):
-    user_info = TimtecUserSerializer(source='user', read_only=True)
+    user_info = MoocUserSerializer(source='user', read_only=True)
     course_info = CourseSerializer(source='course', read_only=True)
     get_name = serializers.Field()
     get_biography = serializers.Field()

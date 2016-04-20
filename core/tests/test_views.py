@@ -17,7 +17,7 @@ def test_lesson(admin_client):
 def assign_professor_to_course(course, existing_professor=None, new_professor_username=None, role=None):
     """
 
-    :param existing_professor: Existing object TimtecUser
+    :param existing_professor: Existing object MoocUser
     :param new_professor_user_name: Non-existing professor username, if not defined, it will be created
     :param course: The course to assign professor to
     :param role: Role to assign to professor

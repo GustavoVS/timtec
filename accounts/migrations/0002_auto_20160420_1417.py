@@ -12,8 +12,8 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.AlterField(
-            model_name='timtecuser',
-            name='last_login',
-            field=models.DateTimeField(null=True, verbose_name='last login', blank=True),
+            model_name='moocuser',
+            name='email',
+            field=models.EmailField(unique=True, max_length=254, verbose_name='Email address'),
         ),
     ]

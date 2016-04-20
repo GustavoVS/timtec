@@ -7,11 +7,11 @@ from django.utils.translation import ugettext_lazy as _
 User = get_user_model()
 
 
-class TimtecUserAdmin(UserAdmin):
+class MoocUserAdmin(UserAdmin):
     model = User
 
     fieldsets = UserAdmin.fieldsets + (
         (_('Timtec Info'), {'fields': ('accepted_terms', 'picture')}),
     )
 
-admin.site.register(User, TimtecUserAdmin)
+admin.site.register(User, MoocUserAdmin)

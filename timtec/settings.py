@@ -405,7 +405,7 @@ SUIT_CONFIG = {
     # 'CONFIRM_UNSAVED_CHANGES': True, # Default True
 
     # menu
-    'SEARCH_URL': '/admin/accounts/timtecuser/',
+    'SEARCH_URL': '/admin/accounts/mooocuser/',
     # 'MENU_ICONS': {
     #    'sites': 'icon-leaf',
     #    'auth': 'icon-lock',
@@ -415,7 +415,7 @@ SUIT_CONFIG = {
     # 'MENU': (
     #     'sites',
     #     {'app': 'auth', 'icon':'icon-lock', 'models': ('user', 'group')},
-    #     {'label': 'Settings', 'icon':'icon-cog', 'models': ('accounts.TimtecUser', 'auth.group')},
+    #     {'label': 'Settings', 'icon':'icon-cog', 'models': ('accounts.MoocUser', 'auth.group')},
     #     # {'label': 'Support', 'icon':'icon-question-sign', 'url': '/support/'},
     # ),
 
@@ -423,7 +423,7 @@ SUIT_CONFIG = {
     # 'LIST_PER_PAGE': 15
 }
 
-AUTH_USER_MODEL = 'accounts.TimtecUser'
+AUTH_USER_MODEL = 'accounts.MoocUser'
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',

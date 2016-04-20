@@ -3,7 +3,7 @@
     var app = angular.module('profile.controllers', []);
 
     app.controller('UserProfileController', ['$scope', '$location', 'UserProfile', 'CurrentUser',
-        function ($scope, $location, TimtecUser, CurrentUser) {
+        function ($scope, $location, MoocUser, CurrentUser) {
 
             // remove the last slash
             var abs_url = $location.absUrl();
@@ -14,9 +14,9 @@
             var username = abs_url.split('/').pop();
             $location.absUrl().split('/').indexOf("profile")
             if (username !== 'profile') {
-                $scope.user_profile = TimtecUser.get({username: username});
+                $scope.user_profile = MoocUser.get({username: username});
             } else {
-                $scope.user_profile = TimtecUser.get({userId: CurrentUser.id});
+                $scope.user_profile = MoocUser.get({userId: CurrentUser.id});
             }
         }
     ]);

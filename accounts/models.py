@@ -12,7 +12,7 @@ from core.utils import hash_name
 import re
 
 
-class AbstractTimtecUser(AbstractBaseUser, PermissionsMixin):
+class AbstractMoocUser(AbstractBaseUser, PermissionsMixin):
     USERNAME_REGEXP = re.compile('^[\w.+-]+$')
     username = models.CharField(
         _('Username'), max_length=30, unique=True,
@@ -100,7 +100,7 @@ class AbstractTimtecUser(AbstractBaseUser, PermissionsMixin):
 
         is_new = self.pk is None
 
-        super(AbstractTimtecUser, self).save(*args, **kwargs)
+        super(AbstractMoocUser, self).save(*args, **kwargs)
 
         if is_new and settings.REGISTRATION_DEFAULT_GROUP_NAME:
             try:
@@ -110,7 +110,7 @@ class AbstractTimtecUser(AbstractBaseUser, PermissionsMixin):
                 pass
 
 
-class TimtecUser(AbstractTimtecUser):
+class MoocUser(AbstractMoocUser):
     """
     Timtec customized user.
 
@@ -119,5 +119,5 @@ class TimtecUser(AbstractTimtecUser):
 
     email = models.EmailField(_('Email address'), blank=False, unique=True)
 
-    class Meta(AbstractTimtecUser.Meta):
+    class Meta(AbstractMoocUser.Meta):
         swappable = 'AUTH_USER_MODEL'

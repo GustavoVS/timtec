@@ -114,7 +114,7 @@ def test_edit_profile(admin_client):
 
 
 def test_admin_user(admin_client):
-    response = admin_client.get('/django/admin/accounts/timtecuser/?q=admin')
+    response = admin_client.get('/django/admin/accounts/moocuser/?q=admin')
     assert 'admin' in response.content
 
 
