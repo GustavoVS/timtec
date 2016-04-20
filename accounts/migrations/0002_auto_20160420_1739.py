@@ -16,4 +16,9 @@ class Migration(migrations.Migration):
             name='email',
             field=models.EmailField(unique=True, max_length=254, verbose_name='Email address'),
         ),
+        migrations.AlterField(
+            model_name='moocuser',
+            name='last_login',
+            field=models.DateTimeField(null=True, verbose_name='last login', blank=True),
+        ),
     ]

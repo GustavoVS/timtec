@@ -46,6 +46,31 @@ class Command(BaseCommand):
                 "delete from accounts_moocuser_user_permissions where exists (select 1 from accounts_moocuser" +
                 " where COALESCE(email, '') = '')")
             self.c.execute("delete from accounts_moocuser where COALESCE(email, '') = ''");
+            self.c.execute(
+                '''delete
+                        from accounts_moocuser
+                        where id in (
+                            select
+                                id
+                            from (  select
+                                        id,
+                                        ROW_NUMBER() over (partition by email order by last_login desc) n
+                                    from accounts_moocuser u1
+                                    where exists (  select 1 from accounts_moocuser
+                                                    where email = u1.email and id <> u1.id)
+                                ) t
+                            where n > 1
+                        )
+                '''
+            )
+            self.c.execute('alter table accounts_moocuser drop column if exists ifid')
+            self.c.execute('alter table accounts_moocuser drop column if exists course')
+            self.c.execute('alter table accounts_moocuser drop column if exists klass')
+            self.c.execute('alter table accounts_moocuser drop column if exists cpf')
+            self.c.execute('alter table accounts_moocuser drop column if exists siape')
+            self.c.execute('alter table accounts_moocuser drop column if exists campus')
+            self.c.execute('alter table accounts_moocuser drop column if exists is_if_staff')
+
 
 
     def drop_user_model(self, model):
@@ -59,8 +84,7 @@ class Command(BaseCommand):
         except ProgrammingError:
             pass
 
-
-    def handle(self):
+    def handle(self, *args, **options):
         self.tim_users = self.user_table_count('accounts_timtec')
         self.if_users = self.user_table_count('ifs_if')
 
