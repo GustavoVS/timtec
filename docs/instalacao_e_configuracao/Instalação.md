@@ -103,14 +103,16 @@ Se ocorrer algum erro, tente rodar o comando make novamente, pois falhas podem o
 ### Criando ambiente virtual manualmente (opcional, use este ou o make create-production)
 Em seguida, vamos criar o ambiente virtual python:
 
-    $ virtualenv /home/NOME-DO-SEU-USUARIO-OU-DIRETORIO/env
-    & source /home/NOME-DO-SEU-USUARIO-OU-DIRETORIO/env/bin/activate
-
+```
+$ virtualenv /home/NOME-DO-SEU-USUARIO-OU-DIRETORIO/env
+$ source /home/NOME-DO-SEU-USUARIO-OU-DIRETORIO/env/bin/activate
+```
 Se você estiver seguindo a documentação, você pode deverá dar o comando da seguinte maneira:
 
-    $ virtualenv /home/timtec-production/env
-    $ source /home/timtec-production/env/bin/activate
-
+```
+$ virtualenv /home/timtec-production/env
+$ source /home/timtec-production/env/bin/activate
+```
 Agora vamos instalar as dependências:
 
     cd timtec
