@@ -2276,6 +2276,12 @@ msgstr "Meus Comprovantes"
 msgid "Receipt Settings"
 msgstr "Opções de Comprovante"
 
+msgid "The page you are trying to access doesn't exist"
+msgstr "A página que você está tentando acessar não existe"
+
+msgid "Error 404"
+msgstr "Erro 404"
+
 #~ msgid "Get receipt"
 #~ msgstr "Emitir comprovante"
 
