@@ -1,4 +1,4 @@
-Essa é a documentação básica de instalação (deploy) timtec. Para informações sobre requisitos e dependências, veja o [README.md](https://github.com/hacklabr/timtec/blob/master/README.md){target="_blank"}.
+Essa é a documentação básica de instalação (deploy) timtec. Para informações sobre requisitos e dependências, veja o [README.md](https://github.com/hacklabr/timtec/blob/master/README.md){:target="_blank"}.
 
 Este tutorial de instalação acompanha um vídeo que pode ser acessado neste [link](https://www.youtube.com/watch?v=tCBtRyIYq9k).
 
