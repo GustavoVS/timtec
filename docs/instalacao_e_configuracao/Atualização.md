@@ -32,7 +32,7 @@ origin	https://github.com/institutotim/timtec.git (fetch)
 origin	https://github.com/institutotim/timtec.git (push)
 ```
 
-## B
+## Atualizando o código
 
 Após confirmar o repositório de origem da aplicação, O próximo passo é atualizar o código. Dentro da raiz do repositório, com o usuário criado para instalação do software, execute:
 
