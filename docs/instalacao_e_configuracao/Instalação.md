@@ -1,9 +1,6 @@
 Essa é a documentação básica de instalação (deploy) timtec. Para informações sobre requisitos e dependências, veja o [README.md](https://github.com/institutotim/timtec/blob/master/README.md).
-<<<<<<< HEAD
-=======
 
 Este tutorial de instalação acompanha um vídeo que pode ser acessado neste <a href="https://www.youtube.com/watch?v=tCBtRyIYq9k" target="_blank">link</a>.
->>>>>>> 1db2068b5ffc17b2f8cd195459e49a9a64224e24
 
 ### Ubuntu 14.04 e Debian 7.7 / 8.0
 Para usar o TIM Tec em produção sugerimos uma arquitetura usando o nginx como servidor web e o [uwsgi](https://uwsgi-docs.readthedocs.org/en/latest/) como proxy.
@@ -48,7 +45,7 @@ Dentro da home do usuário, primeiro vamos instalar o git e clonar o repositóri
 ```
 $ sudo apt-get update
 $ sudo apt-get install git
-$ git clone ~/https://github.com/institutotim/timtec.git
+$ git clone https://github.com/institutotim/timtec.git ~/timtec
 ```
 
 Em seguida, escolha a versão desejada e atualize o código para ela com o comando abaixo. Aqui você encontra uma lista de versões do TIMTec: https://github.com/institutotim/timtec/releases
@@ -106,14 +103,16 @@ Se ocorrer algum erro, tente rodar o comando make novamente, pois falhas podem o
 ### Criando ambiente virtual manualmente (opcional, use este ou o make create-production)
 Em seguida, vamos criar o ambiente virtual python:
 
-    $ virtualenv /home/NOME-DO-SEU-USUARIO-OU-DIRETORIO/env
-    & source /home/NOME-DO-SEU-USUARIO-OU-DIRETORIO/env/bin/activate
-
+```
+$ virtualenv /home/NOME-DO-SEU-USUARIO-OU-DIRETORIO/env
+$ source /home/NOME-DO-SEU-USUARIO-OU-DIRETORIO/env/bin/activate
+```
 Se você estiver seguindo a documentação, você pode deverá dar o comando da seguinte maneira:
 
-    $ virtualenv /home/timtec-production/env
-    $ source /home/timtec-production/env/bin/activate
-
+```
+$ virtualenv /home/timtec-production/env
+$ source /home/timtec-production/env/bin/activate
+```
 Agora vamos instalar as dependências:
 
     cd timtec
