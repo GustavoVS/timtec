@@ -1,4 +1,4 @@
-Essa é a documentação básica de instalação (deploy) timtec. Para informações sobre requisitos e dependências, veja o [README.md](https://github.com/hacklabr/timtec/blob/master/README.md).
+Essa é a documentação básica de instalação (deploy) timtec. Para informações sobre requisitos e dependências, veja o [README.md](https://github.com/institutotim/timtec/blob/master/README.md).
 
 ### Ubuntu 14.04 e Debian 7.7 / 8.0
 Para usar o TIM Tec em produção sugerimos uma arquitetura usando o nginx como servidor web e o [uwsgi](https://uwsgi-docs.readthedocs.org/en/latest/) como proxy.
@@ -23,18 +23,18 @@ Caso não exista é possível criá-lo com:
 $ sudo useradd --groups sudo --create-home timtec-production
 ```
 
-Depois mude a senha: 
+Depois mude a senha:
 
 ```
 $ sudo passwd timtec-production
 ```
-Se você estiver usando Debian, pode acontecer do sistema criar uma instância do novo usuário com acesso a um terminal sh. Se você quiser usar o bash (terminal mais completo e com mais funcionalidades), você pode alterar essa informação no arquivo de configuração de usuários. Proceda da seguinte maneira: 
+Se você estiver usando Debian, pode acontecer do sistema criar uma instância do novo usuário com acesso a um terminal sh. Se você quiser usar o bash (terminal mais completo e com mais funcionalidades), você pode alterar essa informação no arquivo de configuração de usuários. Proceda da seguinte maneira:
 
-1) Abra o arquivo /etc/passwd e verifique a linha onde está o usuário timtec-production. Você pode ver uma linha assim:    
+1) Abra o arquivo /etc/passwd e verifique a linha onde está o usuário timtec-production. Você pode ver uma linha assim:
 
      timtec-production:x:1001:1001::/home/timtec-production:/bin/sh
 
-2) Repare que a linha tem indicação para o terminal sh. Mude para bash e salve o arquivo com a linha desta maneira (use vim, nano ou qualquer editor de sua preferência): 
+2) Repare que a linha tem indicação para o terminal sh. Mude para bash e salve o arquivo com a linha desta maneira (use vim, nano ou qualquer editor de sua preferência):
 
      timtec-production:x:1001:1001::/home/timtec-production:/bin/bash
 
@@ -43,10 +43,10 @@ Dentro da home do usuário, primeiro vamos instalar o git e clonar o repositóri
 ```
 $ sudo apt-get update
 $ sudo apt-get install git
-$ git clone ~/https://github.com/hacklabr/timtec.git
+$ git clone ~/https://github.com/institutotim/timtec.git
 ```
 
-Em seguida, escolha a versão desejada e atualize o código para ela com o comando abaixo. Aqui você encontra uma lista de versões do TIMTec: https://github.com/hacklabr/timtec/releases
+Em seguida, escolha a versão desejada e atualize o código para ela com o comando abaixo. Aqui você encontra uma lista de versões do TIMTec: https://github.com/institutotim/timtec/releases
 
     cd timtec
     git checkout <tag-da-versão>
@@ -85,7 +85,7 @@ Recomendamos o postgreSQL, mas o django suporta outros bancos de dados relaciona
     $ sudo su - postgres -c "createuser -d timtec-production"
     $ createdb --encoding "UTF-8" --locale "pt_BR.UTF-8" timtec-production
 
-obs: caso ocorra algum problema relacionado a locale faltante no sistema, [veja como alterar o locale para pt_BR](Alterando-locale-para-pt_BR.md). 
+obs: caso ocorra algum problema relacionado a locale faltante no sistema, [veja como alterar o locale para pt_BR](Alterando-locale-para-pt_BR.md).
 
 ### Ambiente virtual python e dependências de javascript
 
@@ -104,7 +104,7 @@ Em seguida, vamos criar o ambiente virtual python:
     $ virtualenv /home/NOME-DO-SEU-USUARIO-OU-DIRETORIO/env
     & source /home/NOME-DO-SEU-USUARIO-OU-DIRETORIO/env/bin/activate
 
-Se você estiver seguindo a documentação, você pode deverá dar o comando da seguinte maneira: 
+Se você estiver seguindo a documentação, você pode deverá dar o comando da seguinte maneira:
 
     $ virtualenv /home/timtec-production/env
     $ source /home/timtec-production/env/bin/activate
@@ -115,7 +115,7 @@ Agora vamos instalar as dependências:
     make install
 
 Se ocorrer algum erro, tente rodar o comando make novamente, pois falhas podem ocorrer devido a problemas com a internet.
-  
+
 
 ### Servidor web e de aplicação
 
@@ -139,7 +139,7 @@ Copie os scritps de configuração da instância timtec-production para os sites
 
     $ sudo cp ~/timtec/scripts/conf/nginx-timtec-production /etc/nginx/sites-available/timtec-production
 
-Crie link simbólico do projeto de sites-available para sites-enable: 
+Crie link simbólico do projeto de sites-available para sites-enable:
 
     $ sudo ln -s /etc/nginx/sites-available/timtec-production /etc/nginx/sites-enabled/timtec-production
 
@@ -147,15 +147,15 @@ Remova o arquivo de configuração padrão do nginx para não haver conflito:
 
     $ sudo rm /etc/nginx/sites-enabled/default
 
-Faça um reload do nginx para se certificar que ele está rodando corretamente: 
+Faça um reload do nginx para se certificar que ele está rodando corretamente:
 
     # sudo nginx -s reload
 
-Obs: se o nginx não estiver rodando, execute: 
+Obs: se o nginx não estiver rodando, execute:
 
    $ sudo service nginx start
 
-Em seguida, edite o arquivo de configuração do nginx para colocar seu domínio. 
+Em seguida, edite o arquivo de configuração do nginx para colocar seu domínio.
 
 A instalação não terminou ainda! Precisamos criar o usuário inicial, configurar o domínio do django, o envio de email e a API do youtube.
 

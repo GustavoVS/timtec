@@ -1,7 +1,7 @@
 Manual de Instalação
 ====================
 
-Essa é a documentação básica de instalação (deploy) TIM Tec. Para informações sobre requisitos e dependências, veja o `README.md <https://github.com/hacklabr/timtec/blob/master/README.md>`_.
+Essa é a documentação básica de instalação (deploy) TIM Tec. Para informações sobre requisitos e dependências, veja o `README.md <https://github.com/institutotim/timtec/blob/master/README.md>`_.
 
 .. toctree::
    :maxdepth: 1

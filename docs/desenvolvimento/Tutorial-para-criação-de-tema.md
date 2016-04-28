@@ -6,13 +6,13 @@ Neste tutorial veremos como criar um novo tema para o Timtec para customizar a a
 - Configurar o timtec para usar o novo tema
 - Trocar o banner da home do site
 
-Para esse tutorial vamos supor que você já baixou o código, fez a instalação do sistema e esta com um gerenciador de arquivos aberto ou com um terminal na pasta raiz do projeto. O [guia de temas](https://github.com/hacklabr/timtec/wiki/Temas) pode ajudar com qualquer dúvida que você ficar sobre o sistema de temas.
+Para esse tutorial vamos supor que você já baixou o código, fez a instalação do sistema e esta com um gerenciador de arquivos aberto ou com um terminal na pasta raiz do projeto. O [guia de temas](https://github.com/institutotim/timtec/wiki/Temas) pode ajudar com qualquer dúvida que você ficar sobre o sistema de temas.
 
 # Criando a pasta de temas e estrutura
 
 Dentro da raiz do projeto encontramos a pasta `themes` que contém todos os temas do timtec, é lá que iremos colocar os nossos arquivos para poder criar o nosso tema. Dentro da pasta podemos ver os temas que já foram incorporados ao desenvolvimento do sistema como `new-if` e `timtec`.
 
-O tema mais importante ainda é o tema chamado `default`, é dele que todos os outros temas importam arquivos e tudo que não tiver definido em algum tema é definido no tema `default`. Uma regra simples para construir um tema novo é só copiar arquivos do `default` para outra pasta. 
+O tema mais importante ainda é o tema chamado `default`, é dele que todos os outros temas importam arquivos e tudo que não tiver definido em algum tema é definido no tema `default`. Uma regra simples para construir um tema novo é só copiar arquivos do `default` para outra pasta.
 
 O nome de cada tema é simplesmente o nome do diretório, no projeto preferimos ter só caracteres em minúsculo e traço ('-') para nomear os temas, assim a compatibilidade entre todos os sistemas e as várias formas que esse nome é usado fica garantida. Para esse tutorial vamos chamar o nosso tema de `tutorial`.
 
@@ -22,7 +22,7 @@ A sua arvore deve ficar assim:
 
 ```
 themes
-  ↳ tutorial 
+  ↳ tutorial
       ↳ templates
       ↳ static
           ↳ css
@@ -45,4 +45,4 @@ Recarregue o Timtec e você verá o novo banner na home no browser.
 
 # Por onde continuar
 
-Seguir o padrão definido do `default` e no [guia de temas](https://github.com/hacklabr/timtec/wiki/Temas) é o necessário para implementar todas as features necessárias para ter o timtec com a cara que você quiser.
+Seguir o padrão definido do `default` e no [guia de temas](https://github.com/institutotim/timtec/wiki/Temas) é o necessário para implementar todas as features necessárias para ter o timtec com a cara que você quiser.

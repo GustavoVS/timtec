@@ -1,11 +1,11 @@
-## Configurações importantes pós instalação: 
+## Configurações importantes pós instalação:
 
 1. Verifique seu arquivo `/timtec/timtec/settings_local.py`. A maioria das configurações de ambiente estará lá;
 2. Configure uma chave de API do Youtube e de serviços de autenticação (ex.: facebook);
 3. Configure seu serviço de envio de email. Veja sessão [Configurando Envio de E-mails(SMTP).md](Configurando Envio de E-mails(SMTP).md);
 
 ## Settings Local
-Dentro da aplicação há um importante arquivo chamado settings_local.py que contém os principais parâmetros da ferramenta. Nele você deve: inserir a url que estará ativa em seu domínio, inserir sua chave de API do Youtube, conectar integração com Moodle, entre outros detalhes importantes. 
+Dentro da aplicação há um importante arquivo chamado settings_local.py que contém os principais parâmetros da ferramenta. Nele você deve: inserir a url que estará ativa em seu domínio, inserir sua chave de API do Youtube, conectar integração com Moodle, entre outros detalhes importantes.
 
 Este arquivo, depois da instalação seguida conforme o manual, estará dentro da pasta /timtec/timtec. Veja uma possibilidade de edição do mesmo:
 
@@ -13,17 +13,17 @@ Este arquivo, depois da instalação seguida conforme o manual, estará dentro d
 $ vi ~/timtec/timtec/settings_local.py
 ```
 
-Atente para o modelo deste arquivo aqui [settings_local.py](https://github.com/hacklabr/timtec/blob/master/timtec/settings_local.py.template).
+Atente para o modelo deste arquivo aqui [settings_local.py](https://github.com/institutotim/timtec/blob/master/timtec/settings_local.py.template).
 
-É importante que, depois de editado, você rode os comandos pós-alterações abaixo. 
+É importante que, depois de editado, você rode os comandos pós-alterações abaixo.
 
 ## Comandos importantes pós alterações
 
-Quando fizer alterações, muitas vezes é importante reiniciar os principais serviços em uso. Tenha isso em mente toda vez que fizer alterações nos parâmetros da aplicação. 
+Quando fizer alterações, muitas vezes é importante reiniciar os principais serviços em uso. Tenha isso em mente toda vez que fizer alterações nos parâmetros da aplicação.
 
 
 #### Dando update na aplicação
-Toda vez que dados forem mudados no arquivo de parametrização da aplicação, o update do Django tem de ser acionado. 
+Toda vez que dados forem mudados no arquivo de parametrização da aplicação, o update do Django tem de ser acionado.
 
 ```
 $ cd ~/timtec
@@ -43,19 +43,19 @@ $ sudo service uwsgi start
 
 ## Criando um super usuário
 
-1 - Ative o environment do Django: 
+1 - Ative o environment do Django:
 
   `source /home/timtec-production/env/bin/activate`
 
-2 - Crie um super usuário para a aplicação: 
+2 - Crie um super usuário para a aplicação:
 
 `~/./timtec/manage.py createsuperuser`
 
-3 - Se for necessário trocar a senha: 
+3 - Se for necessário trocar a senha:
 
 `~/./timtec/manage.py changepassword LOGIN-DO-USUARIO`
 
-Feito isso, você poderá acessar a [interface admin do django](https://docs.djangoproject.com/en/1.6/ref/contrib/admin/) pelo endereço <domínio>/django/admin. Exemplo (no browser): 
+Feito isso, você poderá acessar a [interface admin do django](https://docs.djangoproject.com/en/1.6/ref/contrib/admin/) pelo endereço <domínio>/django/admin. Exemplo (no browser):
 
 'http://sua-url//django/admin'
 
@@ -100,7 +100,7 @@ A Variável [ALLOWED_HOSTS](https://docs.djangoproject.com/en/1.6/ref/settings/#
     '.timtec.com.br',
 ]`
 
-Se você estiver rodando a aplicação numa rede local e quiser que todos os ips da rede possam acessar a aplicação, pode colocar isto: 
+Se você estiver rodando a aplicação numa rede local e quiser que todos os ips da rede possam acessar a aplicação, pode colocar isto:
 
 `ALLOWED_HOSTS = ["*",
 ]`
@@ -126,10 +126,10 @@ Após obter a chave, defina a configuração no arquivo settings_local.py:
 `YOUTUBE_API_KEY = 'sua_chave_api_youtube'`
 
 ## Configurando conexão com Moodle
-Ver sessão [[Autenticando no Timtec com OpenID do Moodle]] 
+Ver sessão [[Autenticando no Timtec com OpenID do Moodle]]
 
 ## Verificando Logs
-Caso a aplicação apresente erros e/ou inconsistências, talvez seja importante verificar os logs. 
+Caso a aplicação apresente erros e/ou inconsistências, talvez seja importante verificar os logs.
 
 Log Nginx
 ```
@@ -148,7 +148,7 @@ pendente
 
 
 ## Instruções de importação dos cursos
-1. Considerando que você possui uma instalação da aplicação mais atual (ver Releases: https://github.com/hacklabr/timtec/releases) e quer utilizar os cursos disponíveis no projeto TIM Tec, logue no painel com permissão  no papel de administrador;
+1. Considerando que você possui uma instalação da aplicação mais atual (ver Releases: https://github.com/institutotim/timtec/releases) e quer utilizar os cursos disponíveis no projeto TIM Tec, logue no painel com permissão  no papel de administrador;
 
 2. Acesse o repositório de curso e faça o download dos cursos que deseja importar: https://github.com/institutotim/timtec-cursos
 

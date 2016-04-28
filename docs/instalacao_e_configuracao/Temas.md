@@ -8,9 +8,9 @@ O TIM Tec usa o framework web Django, e no _frontend_ a [linguagem de template D
 Está além desta documentação explicar o funcionamento da sintaxe da linguagem de template Django, amplamente documentada pelo próprio Django.
 
 # Estrutura de Templates
-Os templates do TIM Tec estão na pasta [themes](https://github.com/hacklabr/timtec/tree/master/themes) do repositório e cada pasta dentro dela é um tema.
+Os templates do TIM Tec estão na pasta [themes](https://github.com/institutotim/timtec/tree/master/themes) do repositório e cada pasta dentro dela é um tema.
 
-O tema default é o tema base do timtec. Segue abaixo a lista de templates do diretório [themes/default/templates](https://github.com/hacklabr/timtec/tree/master/themes/default/templates), comentando cada um deles.
+O tema default é o tema base do timtec. Segue abaixo a lista de templates do diretório [themes/default/templates](https://github.com/institutotim/timtec/tree/master/themes/default/templates), comentando cada um deles.
 
 ## base.html
 
@@ -85,7 +85,7 @@ Usamos a [herança de templates do django](https://docs.djangoproject.com/en/1.6
 
 ## Estrutura das folhas de estilos (less)
 
-O Timtec utiliza o [Bootstrap](https://github.com/twbs/bootstrap) como framework base bem como [Less](https://github.com/less/less.js) para escrever e pré-processar os estilos (CSS) dos temas.  
+O Timtec utiliza o [Bootstrap](https://github.com/twbs/bootstrap) como framework base bem como [Less](https://github.com/less/less.js) para escrever e pré-processar os estilos (CSS) dos temas.
 
 A estrutura de arquivos apresenta-se conforme abaixo:
 
@@ -93,18 +93,18 @@ A estrutura de arquivos apresenta-se conforme abaixo:
     |-- static/
         |-- css/
             |-- less/
-                |-- components/      
+                |-- components/
                 |   |-- ...   # componentes reaprovetáveis
                 |               da interface
-                |-- modules/         
-                |   |-- ...   # módulos básicos da interface 
-                |   
-                |-- pages/           
+                |-- modules/
+                |   |-- ...   # módulos básicos da interface
+                |
+                |-- pages/
                 |   |-- ...   # estilos específicos de páginas
                 |               e áreas do site
-                |               
+                |
                 |-- main.less # arquivo que importa e compila
-                                todos os outros arquivos    
+                                todos os outros arquivos
 
 O arquivo `main.less` do tema padrão importa o arquivo principal do Bootstrap bem como os demais arquivos Less do tema.
 
