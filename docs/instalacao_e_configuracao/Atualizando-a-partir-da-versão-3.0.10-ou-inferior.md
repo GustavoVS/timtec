@@ -19,5 +19,5 @@ $ mv timtec/settings_production.py timtec/settings_local.py
 
 Siga os passos descritos na [Atualização](Atualização.md).
 
-Fique atento se a nova versão não possui necessidade de alguma configuração adicional. A partir da [versão 3.0.2](https://github.com/institutotim/timtec/releases/tag/v3.0.2), por exemplo, é necessário que seja [configurado a variável YOUTUBE_API_KEY](https://github.com/institutotim/timtec/wiki/Configura%C3%A7%C3%A3o#configura%C3%A7%C3%A3o-da-chave-da-api-do-youtube)
+Fique atento se a nova versão não possui necessidade de alguma configuração adicional. A partir da [versão 3.0.2](https://github.com/institutotim/timtec/releases/tag/v3.0.2), por exemplo, é necessário que seja [configurado a variável YOUTUBE_API_KEY](Configura%C3%A7%C3%B5es.md#configuração-da-chave-da-api-do-youtube)
 
