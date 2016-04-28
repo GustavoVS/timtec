@@ -41,7 +41,7 @@ $ git pull
 $ git checkout NOME-DA-VERSAO
 ```
 
-Onde o NOME-DA-VERSAO deve ser substítuido pela tag da versão desejada. Exemplos: `git checkout v3.1.1`.
+Onde o NOME-DA-VERSAO deve ser substítuido pela tag da versão desejada. Exemplo: `git checkout v3.1.1`.
 
 Ainda na raiz do repositório, basta executar o comando `make update` para efetuar a alteração da instalação.
 
