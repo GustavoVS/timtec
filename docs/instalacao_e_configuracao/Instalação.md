@@ -1,4 +1,4 @@
-Essa é a documentação básica de instalação (deploy) timtec. Para informações sobre requisitos e dependências, veja o [README.md](https://github.com/hacklabr/timtec/blob/master/README.md).
+Essa é a documentação básica de instalação (deploy) timtec. Para informações sobre requisitos e dependências, veja o [README.md](https://github.com/institutotim/timtec/blob/master/README.md).
 
 Este tutorial de instalação acompanha um vídeo que pode ser acessado neste <a href="https://www.youtube.com/watch?v=tCBtRyIYq9k" target="_blank">link</a>.
 
@@ -45,10 +45,10 @@ Dentro da home do usuário, primeiro vamos instalar o git e clonar o repositóri
 ```
 $ sudo apt-get update
 $ sudo apt-get install git
-$ git clone ~/https://github.com/hacklabr/timtec.git
+$ git clone ~/https://github.com/institutotim/timtec.git
 ```
 
-Em seguida, escolha a versão desejada e atualize o código para ela com o comando abaixo. Aqui você encontra uma lista de versões do TIMTec: https://github.com/hacklabr/timtec/releases
+Em seguida, escolha a versão desejada e atualize o código para ela com o comando abaixo. Aqui você encontra uma lista de versões do TIMTec: https://github.com/institutotim/timtec/releases
 
     cd timtec
     git checkout <tag-da-versão>
