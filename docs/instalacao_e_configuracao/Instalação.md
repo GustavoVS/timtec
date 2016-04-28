@@ -127,7 +127,7 @@ Instale o servidor web (nginx) e o servidor de aplicação (uwsgi):
 
     $ sudo apt-get install -y nginx uwsgi uwsgi-plugin-python
 
-Na pasta timtec/scripts/conf temos exemplo de arquivos de configuração. Copie os mesmos para seus locais e edite-os confore sua necessidade:
+Na pasta timtec/scripts/conf temos exemplo de arquivos de configuração. Copie os mesmos para seus locais e edite-os conforme sua necessidade:
 
     $ sudo cp ~/timtec/scripts/conf/timtec-production.ini /etc/uwsgi/apps-available
 
