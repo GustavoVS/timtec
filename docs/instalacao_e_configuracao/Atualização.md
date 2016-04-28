@@ -43,11 +43,7 @@ $ git checkout NOME-DA-VERSAO
 
 Onde o NOME-DA-VERSAO deve ser substítuido pela tag da versão desejada. Exemplo: `git checkout v3.1.1`.
 
-<<<<<<< HEAD
-Feito isso, [ative o ambiente virtual python](https://github.com/institutotim/timtec/wiki/Instala%C3%A7%C3%A3o#criando-ambiente-virtual-manualmente-opcional-use-este-ou-o-make-create-production) e em seguida faça:
-=======
 Ainda na raiz do repositório, basta executar o comando `make update` para efetuar a alteração da instalação.
->>>>>>> 1db2068b5ffc17b2f8cd195459e49a9a64224e24
 
 `$ make update`
 
