@@ -108,7 +108,7 @@ Se você estiver rodando a aplicação numa rede local e quiser que todos os ips
 
 ## Configurações de email
 
-Definidas principalmente pela variável [EMAIL_BACKEND](https://docs.djangoproject.com/en/1.6/ref/settings/#email-backend). Verifique a documentação do django sobre envio de emails para maiores detalhes: https://docs.djangoproject.com/en/1.6/topics/email/#email-backends
+Definidas principalmente pela variável [EMAIL_BACKEND](https://docs.djangoproject.com/en/1.8/ref/settings/#email-backend). Verifique a documentação do django sobre envio de emails para maiores detalhes: https://docs.djangoproject.com/en/1.8/topics/email/#email-backends
 
 Caso a configuração de email esteja incorreta, ocorrerá um erro durante a criação de usuário.
 
