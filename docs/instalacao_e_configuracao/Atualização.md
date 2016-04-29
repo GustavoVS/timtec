@@ -24,7 +24,7 @@ Caso o endereço do repositório for diferente deste, será necessário alterá-
 $ git remote set-url origin https://github.com/institutotim/timtec.git
 ```
 
-Depois de executar o comando acima, basta a url do repositório utilizando novamente o ocmando `git remote -v`
+Depois de executar o comando acima, basta verificar a url do repositório utilizando novamente o comando `git remote -v`
 
 ```
 $ git remote -v
