@@ -18,16 +18,16 @@ class Command(BaseCommand):
 
         try:
             ifusers = IfUser.objects.all().order_by('-last_login')
+            for ifuser in ifusers:
+                ifuser.__class__ = ActiveUser
+                try:
+                    ifuser.save()
+                except IntegrityError:  # Duplicated e-mail, created by import_users
+                    pass
+
+            call_command('migrate', 'accounts', '0001_initial')
+            c = connection.cursor()
+            c.execute('drop table ifs_ifuser cascade')
+
         except ProgrammingError:  # Relation IfUser doesn't exist.
             return
-
-        for ifuser in ifusers:
-            ifuser.__class__ = ActiveUser
-            try:
-                ifuser.save()
-            except IntegrityError:  # Duplicated e-mail, created by import_users
-                pass
-
-        call_command('migrate', 'accounts', '0001_initial')
-        c = connection.cursor()
-        c.execute('drop table ifs_ifuser cascade')

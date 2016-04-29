@@ -37,9 +37,6 @@ DATABASES = {
     }
 }
 
-MEDIA_ROOT = "/home/timtec-production/webfiles/media/"
-STATIC_ROOT = "/home/timtec-production/webfiles/static/"
-
 ###### TODO: change this to configure sending mail ######
 # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
