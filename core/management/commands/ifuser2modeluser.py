@@ -29,5 +29,16 @@ class Command(BaseCommand):
             c = connection.cursor()
             c.execute('drop table ifs_ifuser cascade')
 
+            # todo: Get the new column name from ActiveUser Model
+            try:
+                c.execute('alter table core_professormessage_users rename column ifuser_id to timtecuser_id')
+            except ProgrammingError:  #Column don't exist
+                pass
+
+            try:
+                c.execute('alter table core_class_students rename column ifuser_id to timtecuser_id')
+            except ProgrammingError:  #Column don't exist
+                pass
+
         except ProgrammingError:  # Relation IfUser doesn't exist.
             return
