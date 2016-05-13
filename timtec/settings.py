@@ -35,6 +35,23 @@ EMAIL_HOST = 'localhost'
 DEFAULT_FROM_EMAIL = 'donotreply-dev@m.timtec.com.br'
 CONTACT_RECIPIENT_LIST = ['timtec-dev@listas.hacklab.com.br', ]
 
+CONTACT_FROM_OPTIONS = ['Estudante do IFSul',
+                        'Professor do IFSul',
+                        'Estudante',
+                        'Professor',
+                        'Jornalista',
+                        'Administrador de instituição educacional',
+                        'Outro',
+                        ]
+
+CONTACT_SUBJECT_OPTIONS = ['Problemas no registro de usuários',
+                           'Problemas técnicos',
+                           'Acessibilidade para estudantes',
+                           'Certificados e exames',
+                           'Relacionamento institucional',
+                           'Outro assunto',
+                           ]
+
 TERMS_ACCEPTANCE_REQUIRED = True
 
 DATABASES = {

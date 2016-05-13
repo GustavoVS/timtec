@@ -17,6 +17,8 @@ class ContactForm(forms.Form):
     name = forms.CharField(label=_('Name'), max_length=128)
     email = forms.EmailField(label=_('Email'))
     message = forms.CharField(label=_('Message'), max_length=255)
+    from_options = settings.CONTACT_FROM_OPTIONS
+    subject_options = settings.CONTACT_SUBJECT_OPTIONS
 
     def send_email(self):
         subject = self.cleaned_data.get('subject')

@@ -2,11 +2,9 @@
     <label class="col-lg-4 control-label">Sou</label>
     <div class="col-lg-8">
         <select class="form-control" name="{{contact_form.occupation.name}}">
-            <option>Estudante</option>
-            <option>Professor</option>
-            <option>Jornalista</option>
-            <option>Administrador de instituição educacional</option>
-            <option>Outro</option>
+            {% for option in contact_form.from_options %}
+                <option>{{ option }}</option>
+            {% endfor %}
         </select>
     </div>
 </div>
@@ -14,12 +12,9 @@
     <label class="col-lg-4 control-label">Quero falar sobre</label>
     <div class="col-lg-8">
         <select class="form-control" name="{{contact_form.subject.name}}">
-            <option>Problemas no registro de usuários</option>
-            <option>Problemas técnicos</option>
-            <option>Acessibilidade para estudantes</option>
-            <option>Certificados e exames</option>
-            <option>Relacionamento institucional</option>
-            <option>Outro assunto</option>
+            {% for option in contact_form.subject_options %}
+                <option>{{ option }}</option>
+            {% endfor %}
         </select>
     </div>
 </div>
